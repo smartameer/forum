@@ -1,24 +1,20 @@
 # GQL Forum
 
+### Installation
+    yarn install
 
-## Installation
-```yarn install```
-
-
-## DB setup
-
+### DB setup
     npx prisma migrate
 
- ## Development
-
+### Development
     yarn dev
 
-
-## DB viewer
-
+### DB viewer
     npx prisma studio
 
 
+## Details
+---
 This will run a forum server with
   - Posts
     - Create/Read/Update/Delete Post
