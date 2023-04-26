@@ -1,0 +1,36 @@
+{
+  "name": "graphql-forum",
+  "version": "1.0.0",
+  "description": "Graphql Forum",
+  "main": "app/index.js",
+  "scripts": {
+    "dev": "nodemon --watch app --delay 3 app/index.js",
+    "start": "node app/index.js",
+    "format": "npx prettier --write \"app/**/*.{js,gql}\"",
+    "lint": "npx eslint app/**/*.js --fix"
+  },
+  "author": "Ameer",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.7.0",
+    "@prisma/client": "^4.13.0",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^9.0.0",
+    "prisma": "^4.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "plugins": ["prettier"],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "object-shorthand": "warn",
+    "curly": "error",
+    "newline-after-var": "warn",
+    "eqeqeq": "error",
+    "max-depth": ["error", 3],
+    "no-else-return": "error",
+    "no-var": "error",
+    "one-var": ["warn", { "const": "never", "let": "always"}]
+  }
+}

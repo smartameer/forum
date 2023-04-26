@@ -1,0 +1,101 @@
+input PostOrderInput {
+  popular: Sort
+  recent: Sort
+  discussed: Sort
+}
+
+enum Sort {
+  asc
+  desc
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  username: String!
+  posts: [Post!]!
+  votes: [Vote!]!
+  comments: [Comment!]!
+
+  totalPosts: Int
+  totalComments: Int
+  totalVotes: Int
+}
+
+type Post {
+  id: ID!
+  title: String!
+  description: String!
+  user: User
+  votes: [Vote!]!
+  comments: [Comment!]!
+  createdAt: Date!
+  updatedAt: Date!
+
+  totalComments: Int
+  totalVotes: Int
+}
+
+type Comment {
+  id: ID!
+  message: String!
+  user: User
+  votes: [Vote!]!
+  comments: [Comment!]!
+  createdAt: Date!
+  updatedAt: Date!
+
+  totalVotes: Int
+}
+
+type Vote {
+  id: ID!
+  post: Post!
+  comment: Comment!
+  user: User
+  status: Boolean
+  createdAt: Date
+  updatedAt: Date
+}
+
+type Posts {
+  result: [Post!]!
+  total: Int!
+}
+
+type Users {
+  result: [User!]!
+  total: Int!
+}
+
+scalar Date
+
+type Query {
+  info: String!
+  posts(page: Int, limit: Int, sort: PostOrderInput, total: Boolean): Posts
+  post(id: ID!): Post
+  users(page: Int, limit: Int, total: Boolean): Users
+  me: User
+}
+
+type Mutation {
+  signup(username: String!, password: String!, name: String!): AuthPayload
+  login(username: String!, password: String!): AuthPayload
+  update_account(name: String, password: String): User
+
+  create_post(title: String!, description: String!): Post!
+  update_post(id: ID!, title: String, description: String): Post
+  delete_post(id: ID!): Boolean!
+
+  create_comment(postId: ID!, message: String!): Comment!
+  update_comment(id: ID!, message: String!): Comment!
+  delete_comment(id: ID!): Boolean!
+
+  vote_post(postId: ID!): Vote!
+  vote_comment(commentId: ID!): Vote!
+}
