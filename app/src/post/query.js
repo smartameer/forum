@@ -6,7 +6,7 @@ const posts = async (parent, args, context) => {
   }
 
   let orderBy = {
-    createdAt: 'desc',
+    updatedAt: 'desc',
   }
 
   if (args.sort) {
@@ -29,7 +29,8 @@ const posts = async (parent, args, context) => {
         }
         break
       case PostOrder.recent:
-        orderBy.createdAt = order
+      default:
+        orderBy.updatedAt = order
         break
     }
   }
