@@ -21,7 +21,7 @@ const { url } = await startStandaloneServer(server, {
       userId: req && req.headers.authorization ? getUserId(req) : null,
     }
   },
-  listen: { port: 4000 },
+  listen: { port: process.env.PORT },
 })
 
 console.log(`🚀  Server ready at: ${url}`)

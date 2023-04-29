@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch app --delay 3 app/index.js",
     "start": "node app/index.js",
+    "seed": "node prisma/seeds/index.js",
     "format": "npx prettier --write \"app/**/*.{js,gql}\"",
     "lint": "npx eslint app/**/*.js --fix"
   },
@@ -20,6 +21,7 @@
     "prisma": "^4.13.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",

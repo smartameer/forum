@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 
-const APP_SECRET = 'forum_app'
+const APP_SECRET = process.env.JWT_SECRET || 'forum'
 const TOKEN_EXPIRY = 24 * 60 * 60
 
 const getTokenPayload = token => {

@@ -6,6 +6,9 @@
 ### DB setup
     npx prisma migrate
 
+### DB seeding
+    yarn seed
+
 ### Development
     yarn dev
 
