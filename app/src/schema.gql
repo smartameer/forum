@@ -46,7 +46,6 @@ type Comment {
   message: String!
   user: User
   votes: [Vote!]!
-  comments: [Comment!]!
   createdAt: Date!
   updatedAt: Date!
 
@@ -81,6 +80,8 @@ type Query {
   post(id: ID!): Post
   users(page: Int, limit: Int, total: Boolean): Users
   me: User
+  comments(post_id: Int): [Comment]
+  comment(id: ID!): Comment
 }
 
 type Mutation {

@@ -7,7 +7,7 @@ const votes = (parent, args, context) => {
 }
 
 const totalVotes = async (parent, args, context) => {
-  return context.prisma.votes.count({ where: { commentId: parent.id } })
+  return context.prisma.vote.count({ where: { commentId: parent.id } })
 }
 
 export { user, votes, totalVotes }
